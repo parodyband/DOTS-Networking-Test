@@ -74,6 +74,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.jobs": {
+      "version": "0.70.0-preview.7",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.collections": "1.4.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.logging": {
       "version": "file:com.unity.logging@1.0.10",
       "depth": 0,
@@ -123,11 +132,33 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.platforms": {
+      "version": "1.0.0-exp.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0",
+        "com.unity.properties": "2.0.0-exp.11",
+        "com.unity.scriptablebuildpipeline": "1.20.2",
+        "com.unity.serialization": "2.0.0-exp.11",
+        "com.unity.jobs": "0.70.0-preview.7"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.profiling.core": {
       "version": "1.0.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.properties": {
+      "version": "2.1.0-exp.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework.performance": "2.8.0-preview"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
@@ -200,6 +231,27 @@
         "com.unity.settings-manager": "1.0.3",
         "com.unity.mathematics": "1.2.1",
         "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.test-framework": {
+      "version": "1.1.33",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.6",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.test-framework.performance": {
+      "version": "2.8.0-preview",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
