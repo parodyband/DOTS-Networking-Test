@@ -1,4 +1,5 @@
-﻿using NetCode.Components;
+﻿using System.Globalization;
+using NetCode.Components;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.NetCode;
@@ -15,6 +16,7 @@ namespace NetCode.Systems
             state.RequireForUpdate<Spawner>();
             state.RequireForUpdate<InputComponent>();
             state.RequireForUpdate<NetworkId>();
+            state.RequireForUpdate<Player>();
         }
 
         [BurstCompile]
@@ -29,16 +31,35 @@ namespace NetCode.Systems
                          .WithAll<GhostOwnerIsLocal>())
             {
                 input.ValueRW = default;
-                if (left)
-                    input.ValueRW.Horizontal -= 1;
-                if (right)
-                    input.ValueRW.Horizontal += 1;
-                if (up)
-                    input.ValueRW.Vertical += 1;
-                if (down)
-                    input.ValueRW.Vertical -= 1;
-            }
+                
+                input.ValueRW.Horizontal = (int)Input.GetAxisRaw("Horizontal");
+                input.ValueRW.Vertical = (int)Input.GetAxisRaw("Vertical");
 
+                // if (left)
+                //     input.ValueRW.Horizontal -= 1;
+                // if (right)
+                //     input.ValueRW.Horizontal += 1;
+                // if (up)
+                //     input.ValueRW.Vertical += 1;
+                // if (down)
+                //     input.ValueRW.Vertical -= 1;
+            }
+            
+            
+
+            foreach (var input in SystemAPI.Query<RefRW<Player>>()
+                         .WithAll<GhostOwnerIsLocal>())
+            {
+                if (!Input.GetKeyDown(KeyCode.Space)) continue;
+                
+                input.ValueRW.Value += 0.25f;
+
+                if (input.ValueRW.Value > 1)
+                {
+                    input.ValueRW.Value -= 1;
+                }
+
+            }
         }
     }
 }

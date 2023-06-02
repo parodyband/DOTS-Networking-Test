@@ -1,11 +1,13 @@
 using Unity.Entities;
 using Unity.NetCode;
+using Unity.Rendering;
 
 namespace NetCode.Components
 {
-    public struct Player : IComponentData
+    [MaterialProperty("_Spooky_Level")]
+    public struct Player : IInputComponentData
     {
         [GhostField]
-        public int SpookyLevel;
+        public float Value;
     }
 }

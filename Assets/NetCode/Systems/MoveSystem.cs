@@ -40,8 +40,8 @@ namespace NetCode.Systems
     public partial struct MoveJob : IJobEntity
     {
         public float Speed;
-        
-        public void Execute(InputComponent input, RefRW<LocalTransform> transform)
+
+        private void Execute(InputComponent input, RefRW<LocalTransform> transform)
         {
             var move = new float2(input.Horizontal, input.Vertical);
             move = math.normalizesafe(move) * Speed;

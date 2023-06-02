@@ -1,6 +1,4 @@
-﻿using Unity.Entities;
-using Unity.NetCode;
-using UnityEngine;
+﻿using Unity.NetCode;
 
 namespace NetCode.Components
 {
